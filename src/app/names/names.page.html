@@ -1,9 +1,28 @@
 <ion-header>
   <ion-toolbar>
-    <ion-title>names</ion-title>
+    <ion-buttons slot="start">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title>
+      Names
+    </ion-title>
   </ion-toolbar>
 </ion-header>
 
 <ion-content>
-
+  <div class="card-container">
+    <div swingStack #swingStack (throwoutleft)="onReject($event)" (throwoutright)="onAccept($event)" id="card-stack">
+      <ion-card swingCard #swingCards *ngFor="let card of cards" color="primary">
+        <ion-card-header>
+          <ion-card-title>{{ card.name }}</ion-card-title>
+          <ion-card-subtitle>Card Subtitle</ion-card-subtitle>
+        </ion-card-header>
+        <ion-card-content>
+          Keep close to Nature's heart... and break clear away, once in awhile,
+          and climb a mountain or spend a week in the woods. Wash your spirit
+          clean.
+        </ion-card-content>
+      </ion-card>
+    </div>
+  </div>
 </ion-content>
