@@ -11,4 +11,6 @@
 @import '~@ionic/angular/css/flex-utils.css';
 
 // Custom 
+@import './theme/lucina-variables.scss';
+@import './theme/mixins.scss';
 @import './theme/card-stack.scss';

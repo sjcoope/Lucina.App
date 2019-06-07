@@ -7,11 +7,11 @@ import { NameInfo } from './model/name-info';
 })
 export class NamesService {
   Names: NameInfo[] = [
-    { id: 1, name: 'Simon' },
-    { id: 2, name: 'Claire' },
-    { id: 3, name: 'Geoff' },
-    { id: 4, name: 'Delia' },
-    { id: 5, name: 'Debora' }
+    { id: 1, name: 'Simon', img: 'assets/img/photo.png' },
+    { id: 2, name: 'Claire', img: 'assets/img/photo.png' },
+    { id: 3, name: 'Geoff', img: 'assets/img/photo.png' },
+    { id: 4, name: 'Delia', img: 'assets/img/photo.png' },
+    { id: 5, name: 'Debora', img: 'assets/img/photo.png' }
   ];
 
   constructor() {}

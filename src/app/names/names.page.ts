@@ -14,9 +14,25 @@ export class NamesPage implements OnInit {
   @ViewChild('swingStack', { read: SwingStackDirective }) swingStack: SwingStackDirective;
   @ViewChildren('swingCards', { read: SwingCardDirective }) swingCards: QueryList<SwingCardDirective>;
 
+  stackConfig: StackConfig;
+
+  actionInProgress = false;
+  animateReject = false;
+  animateAccept = false;
+
   cards: NameInfo[];
 
-  constructor(private nameService: NamesService) { }
+  constructor(private nameService: NamesService) {
+    this.stackConfig = {
+      allowedDirections: [Direction.LEFT, Direction.RIGHT],
+      throwOutConfidence: (offsetX, offsetY, element) => {
+          return Math.min(Math.abs(offsetX) / (element.offsetWidth / 1.8), 1);
+      },
+      throwOutDistance: (d) => {
+          return 800;
+      }
+    };
+  }
 
   ngOnInit() {
     this.nameService.getNames()
@@ -25,10 +41,16 @@ export class NamesPage implements OnInit {
 
   onReject(event: ThrowEvent) {
     console.log('onReject', event);
+    this.animateReject = true;
   }
 
   onAccept(event: ThrowEvent) {
     console.log('onAccept', event);
+    this.animateAccept = true;
+  }
+
+  hasCards(): boolean {
+    return this.cards.length > 0;
   }
 
 }

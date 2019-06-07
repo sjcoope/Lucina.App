@@ -1,7 +1,8 @@
 #card-stack {
+    display: flex;
+
     > ion-card {
         position: absolute;
-        width: 90vw;
-        max-width: 44rem;
+        margin: 1rem;
     }
 }
