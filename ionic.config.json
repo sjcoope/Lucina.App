@@ -1,6 +1,8 @@
 {
   "name": "Lucina.App",
-  "integrations": {},
+  "integrations": {
+    "cordova": {}
+  },
   "type": "angular",
   "id": "b69462b2"
 }

@@ -1,6 +1,6 @@
-import { Component, OnInit, ViewChild, ViewChildren, QueryList } from '@angular/core';
+import { Component, OnInit, ViewChild, ViewChildren, QueryList, AfterContentInit } from '@angular/core';
 
-import { SwingStackDirective, SwingCardDirective, StackConfig, Direction, ThrowEvent } from 'ionic-swing';
+import { SwingStackDirective, SwingCardDirective, Stack, StackConfig, Direction, ThrowEvent } from 'ionic-swing';
 
 import { NameInfo } from '../services/model/name-info';
 import { NamesService } from '../services/names.service';
@@ -26,7 +26,7 @@ export class NamesPage implements OnInit {
     this.stackConfig = {
       allowedDirections: [Direction.LEFT, Direction.RIGHT],
       throwOutConfidence: (offsetX, offsetY, element) => {
-          return Math.min(Math.abs(offsetX) / (element.offsetWidth / 1.8), 1);
+        return Math.min(Math.abs(offsetX) / (element.offsetWidth / 1.55), 1);
       },
       throwOutDistance: (d) => {
           return 800;
