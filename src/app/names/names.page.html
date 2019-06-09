@@ -30,7 +30,7 @@
 
   <div *ngIf="hasCards()" id="actions-buttons">
 
-    <ion-fab-button no-padding (click)="onReject(null)" class="button-dislike" [disabled]="actionInProgress">
+    <ion-fab-button no-padding (click)="reject(null)" class="button-dislike" [disabled]="actionInProgress">
       <ion-icon name="close"></ion-icon>
     </ion-fab-button>
 
@@ -38,7 +38,7 @@
       <ion-icon name="add"></ion-icon>
     </ion-fab-button>
 
-    <ion-fab-button no-padding (click)="onAccept(null)" class="button-bookmark" [disabled]="actionInProgress">
+    <ion-fab-button no-padding (click)="accept(null)" class="button-bookmark" [disabled]="actionInProgress">
       <ion-icon name="checkmark"></ion-icon>
     </ion-fab-button>
 

@@ -16,7 +16,13 @@ export class NamesService {
 
   constructor() {}
 
-  getNames(): Observable<NameInfo[]> {
-    return of(this.Names);
+  public names: Observable<NameInfo[]>;
+
+  rejectName(nameInfo: NameInfo) {
+    console.log('rejectName');
+  }
+
+  acceptName(nameInfo: NameInfo) {
+    console.log('acceptName');
   }
 }

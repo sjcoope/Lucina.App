@@ -35,8 +35,10 @@ export class NamesPage implements OnInit {
   }
 
   ngOnInit() {
-    this.nameService.getNames()
-        .subscribe(names => this.cards = names);
+    // this.nameService.getNames()
+    //     .subscribe(names => this.cards = names);
+
+
   }
 
   onReject(event: ThrowEvent) {
@@ -49,8 +51,16 @@ export class NamesPage implements OnInit {
     this.animateAccept = true;
   }
 
-  hasCards(): boolean {
-    return this.cards.length > 0;
+  accept() {
+    console.log('accept');
   }
 
+  reject() {
+    console.log('reject');
+  }
+
+  hasCards(): boolean {
+    // TODO: Fix
+    return true;
+  }
 }
