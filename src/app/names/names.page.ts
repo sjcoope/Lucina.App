@@ -3,7 +3,7 @@ import { Component, OnInit, ViewChild, ViewChildren, QueryList, AfterContentInit
 import { SwingStackDirective, SwingCardDirective, Stack, StackConfig, Direction, ThrowEvent } from 'ionic-swing';
 
 import { NameInfo } from '../services/model/name-info';
-import { NamesService } from '../services/names.service';
+import { NamesService } from '../services/data/names.service';
 
 @Component({
   selector: 'app-names',
